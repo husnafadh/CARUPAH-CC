@@ -1,27 +1,28 @@
 const express = require('express');
 const admin = require('firebase-admin');
 const cors = require('cors');
+const db = require('../services/firebaseAdmin');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-//Initialize Firebase Admin SDK
-admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-    // Firebase project's service account key JSON
-    databaseURL: '<https://project-id.firebaseio.com>',
-});
 //Registration endpoint
-app.post('/register', async (req, res)=> {
-    const {email, password} = req.body;
-    try{
-        const userRecord = await admin.auth().createUser({email, password});
-        res.json({message: 'User registered successfully', data: userRecord.toJSON()});
-    } catch (error){
-        res.status(400).json({ error: error.message});
-    }
+app.post('/register', (req, res) => {
+  const { name, email, password, confirm_pw, telp } = req.body;
+
+  // Save the user data to Firestore
+  db.collection('users')
+    .add({ name, email, password, telp })
+    .then(() => {
+      res.status(201).json({ message: 'User added successfully!' });
+    })
+    .catch((error) => {
+      console.error('Error adding user: ', error);
+      res.status(500).json({ error: 'Failed to add user.' });
+    });
 });
+
 // Login endpoint
 app.post('/login', async (req, res) =>{
     const {email, password} = req.body;
