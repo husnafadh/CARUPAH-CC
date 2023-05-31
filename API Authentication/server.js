@@ -1,7 +1,7 @@
 const express = require('express');
 const admin = require('firebase-admin');
 const cors = require('cors');
-const db = require('../services/firebaseAdmin');
+const db = require('./services/firebaseAdmin');
 
 const app = express();
 app.use(express.json());
