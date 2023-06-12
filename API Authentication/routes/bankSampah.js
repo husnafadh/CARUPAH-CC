@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../handler/bankSampahHandler');
+const bankSampahHandler = require('../handler/bankSampahHandler');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,27 +43,27 @@ fileFilter: (req, file, cb) => {
 
 
 // get all users
-router.get('/', userController.getAllUsers);
+router.get('/', bankSampahHandler.getAllUsers);
 
 // get users by id
-router.get('/:userId', userController.getAllUsersById);
+router.get('/:userId', bankSampahHandler.getAllUsersById);
 
 // create users
-router.post('/', upload.single('file'), userController.createNewUser);
+router.post('/', upload.single('file'), bankSampahHandler.createNewUser);
 
 // update user
-router.patch('/:userId', userController.updateUser);
+router.patch('/:userId', bankSampahHandler.updateUser);
 
 // delete
-router.delete('/:userId', userController.deleteUser);
+router.delete('/:userId', bankSampahHandler.deleteUser);
 
 // add profile picture
-router.patch('/profile-picture/:userId', uploadImage.single('image'), userController.changeProfilePicture);
+router.patch('/profile-picture/:userId', uploadImage.single('image'), bankSampahHandler.changeProfilePicture);
 
 // change password
-router.patch('/change-password/:userId', userController.changePassword);
+router.patch('/change-password/:userId', bankSampahHandler.changePassword);
 
 // login
-router.post('/login', userController.login);
+router.post('/login', bankSampahHandler.login);
 
 module.exports = router;
