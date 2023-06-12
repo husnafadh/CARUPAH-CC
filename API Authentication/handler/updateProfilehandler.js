@@ -5,14 +5,14 @@ const admin = require('firebase-admin');
 const updateProfile = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const { name, numberPhone, city, district, subdistrict, address } = req.body;
+    const { name, telp, city, district, subdistrict, address } = req.body;
 
     const updateData = {
       updatedAt: new Date()
     };
 
     if (name) updateData.name = name;
-    if (numberPhone) updateData.numberPhone = numberPhone;
+    if (telp) updateData.numberPhone = telp;
     if (city) updateData.city = city;
     if (district) updateData.district = district;
     if (subdistrict) updateData.subdistrict = subdistrict;
