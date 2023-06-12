@@ -11,13 +11,13 @@ admin.initializeApp({
 
 // Registration handler
 async function register(req, res) {
-  const { nama, email, password, noTelepon } = req.body;
+  const { name, email, password, telp } = req.body;
   try {
     const userRecord = await admin.auth().createUser({ email, password });
     // Simpan data tambahan ke Firestore
     await firestore.collection('users').doc(userRecord.uid).set({
-      nama,
-      noTelepon
+      name,
+      telp
     });
     res.json({ message: 'User registered successfully', data: userRecord.toJSON() });
   } catch (error) {
