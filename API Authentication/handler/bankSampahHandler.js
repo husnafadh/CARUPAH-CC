@@ -35,7 +35,7 @@ const getAllUsersById = async(req, res) => {
 
 const createNewUser = async (req, res) => {
     try{
-        const { name, email, password, confirm_pw, numberPhone, address } = req.body;
+        const { name, email, password, confirm_pw, telp, address } = req.body;
         const file = req.file;
 
         // Check if password and confirm_pw same
@@ -69,7 +69,7 @@ const createNewUser = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            numberPhone,
+            telp,
             address,
             evidenceFile: evidenceFile,
             updatedAt: new Date(),
@@ -85,7 +85,7 @@ const createNewUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const userId = req.params.userId;
-        const { name, email, numberPhone, address } = req.body;
+        const { name, email, telp, address } = req.body;
 
         const updateData = {    
             updatedAt: new Date()
@@ -93,7 +93,7 @@ const updateUser = async (req, res) => {
 
         if (name) updateData.name = name;
         if (email) updateData.email = email;
-        if (numberPhone) updateData.numberPhone = numberPhone;
+        if (telp) updateData.numberPhone = numberPhone;
         // if (city) updateData.city = city;
         // if (district) updateData.district = district;
         // if (subdistrict) updateData.subdistrict = subdistrict;
