@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controller/user');
+const profileHandler = require('../handler/updateProfileHandler');
 const multer = require('multer');
 const upload = multer({ dest: 'profileImages/',
 fileFilter: (req, file, cb) => {
@@ -18,21 +18,21 @@ fileFilter: (req, file, cb) => {
 });
 
 // get all users
-router.get('/', userController.getAllUsers);
+router.get('/', profileHandler.getAllUsers);
 
 // get users by id
-router.get('/:userId', userController.getAllUsersById);
+router.get('/:userId', profileHandler.getAllUsersById);
 
 // update profile
-router.patch('/:userId', userController.updateProfile);
+router.patch('/:userId', profileHandler.updateProfile);
 
 // delete
-router.delete('/:userId', userController.deleteUser);
+router.delete('/:userId', profileHandler.deleteUser);
 
 // profile picture
-router.patch('/profile-picture/:userId', upload.single('image'), userController.changeProfilePicture);
+router.patch('/profile-picture/:userId', upload.single('image'), profileHandler.changeProfilePicture);
 
 // change password
-router.patch('/change-password/:userId', userController.changePassword);
+router.patch('/change-password/:userId', profileHandler.changePassword);
 
 module.exports = router;
