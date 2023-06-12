@@ -1,9 +1,9 @@
 const express = require('express');
 const admin = require('firebase-admin');
 const cors = require('cors');
-const authRoutes = require('../routes/auth');
-const db = require('./services/firebaseAdmin');
-const updateProfileRoute = require('./routes/updateProfile');
+const authRoutes = require('./routes/auth');
+const updateProfileRoutes = require('./routes/updateProfile');
+const bankSampahRoutes = require('./routes/bankSampah');
 
 const app = express();
 app.use(express.json());
@@ -13,7 +13,10 @@ app.use(cors());
 app.use('/auth', auth);
 
 //update profile
-app.use('/profile', updateProfileRoute);
+app.use('/profile', updateProfileRoutes);
+
+//bank sampah
+app.use('/bank-sampah', bankSampahRoutes);
 
 //Start the server
 const PORT = process.env.PORT || 3000;
