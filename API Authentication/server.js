@@ -9,19 +9,19 @@ app.use(express.json());
 app.use(cors());
 
 //Registration endpoint
-app.post('/register', (req, res) => {
-  const { name, email, password, confirm_pw, telp } = req.body;
-
-  // Save the user data to Firestore
-  db.collection('users')
-    .add({ name, email, password, telp })
-    .then(() => {
-      res.status(201).json({ message: 'User added successfully!' });
-    })
-    .catch((error) => {
-      console.error('Error adding user: ', error);
-      res.status(500).json({ error: 'Failed to add user.' });
-    });
+app.post('/register', async (req, res) => {
+    const { nama, email, password, noTelepon } = req.body;
+    try {
+        const userRecord = await admin.auth().createUser({ email, password });
+        //Simpan data tambahan ke Firestore
+        await firestore.collection('users').doc(userRecord.uid).set({
+            nama,
+            noTelepon
+        });
+        res.json({ message: 'User registered successfully', data: userRecord.toJSON() });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 });
 
 // Login endpoint
@@ -37,13 +37,13 @@ app.post('/login', async (req, res) =>{
 });
 // Google OAuth sign-in endpoint
 const {OAuth2Client} = require('google-auth-library');
-const client = new OAuth2Client('google-client-id');
+const client = new OAuth2Client('1077678923255-vjvgc5q5licb5ddr5o0r9s83691704ov.apps.googleusercontent.com');
 app.post('/google-signin', async (req, res)=>{
     const { idToken } = req.body;
     try{
         const ticket = await client.verifyIdToken({
             idToken,
-            audience: 'google-client-id',
+            audience: '1077678923255-vjvgc5q5licb5ddr5o0r9s83691704ov.apps.googleusercontent.com',
         });
         const {email} = ticket.getPayload();
         const userRecord = await admin.auth().getUserByEmail(email);
