@@ -16,14 +16,14 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 # Load words and classes
-words = pickle.load(open('./ml_models/data_words_carupai.pkl', 'rb'))
-classes = pickle.load(open('./ml_models/data_classes_carupai.pkl', 'rb'))
+words = pickle.load(open('data_words_carupai.pkl', 'rb'))
+classes = pickle.load(open('data_classes_carupai.pkl', 'rb'))
 
 # Load model
-model = tf.keras.models.load_model('./ml_models/chatbot_model.h5')
+model = tf.keras.models.load_model('chatbot_model.h5')
 
 # Load intents data
-with open('./ml_models/chatbot-carupai.json') as f:
+with open('chatbot-carupai.json') as f:
     intents = json.load(f)
 
 # Lemmatizer
