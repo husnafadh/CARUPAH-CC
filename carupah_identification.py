@@ -14,14 +14,14 @@ output_details = interpreter.get_output_details()
 
 # Load the class labels
 # class_labels = ['class1', 'class2', 'class3', 'class4', 'class5', 'class6']
-class_labels = ['AluCan', 'Cardboard', 'Detergent', 'Glass', 'HDPEM', 'PET']
+class_labels = ['Alumunium', 'Cardboard', 'Detergent', 'Glass', 'HDPEM', 'PET']
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     # Read the image file
     image = Image.open(file.file)
-    image = image.resize((256, 256))  # Resize the image to match the input size of the model
-    image = np.array(image) / 255.0  # Normalize the image
+    image = image.resize((256, 256))  
+    image = np.array(image) / 255.0  
 
     # Save the image
     save_path = f"saved_images/{file.filename}"
@@ -42,4 +42,4 @@ async def predict(file: UploadFile = File(...)):
     return {"predicted_class": predicted_class}
 
 if __name__ == "__main__":
-    uvicorn.run(app, port=8080, host='127.0.0.1')
+    uvicorn.run(app, port=8080, host='0.0.0.0')
