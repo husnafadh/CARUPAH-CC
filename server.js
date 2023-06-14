@@ -19,7 +19,9 @@ app.use('/profile', updateProfileRoutes);
 app.use('/bank-sampah', bankSampahRoutes);
 
 //deployment check
-app.get('/', "Response Success");
+app.get('/', (req, res) => {
+    res.send("Response Success");
+});  
 
 //Start the server
 const PORT = process.env.PORT || 3000;

@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const db = require('../config/firebaseAdmin');
+const db = require('../services/firebaseAdmin');
 const admin = require('firebase-admin');
 
 const getAllUsers = async(req, res) => {

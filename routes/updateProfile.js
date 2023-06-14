@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const profileHandler = require('../../handler/updateProfileHandler');
+const profileHandler = require('../handlers/updateProfileHandler');
 const multer = require('multer');
 const upload = multer({ dest: 'profileImages/',
 fileFilter: (req, file, cb) => {
