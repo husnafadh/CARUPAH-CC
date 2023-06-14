@@ -505,7 +505,7 @@ http://34.101.82.202:8080/
 - **URL**
     - /carupai
 - **Method**
-    - PUSH
+    - POST
 - **Request Body**
     - message, as string
 - **************Response**************
@@ -532,7 +532,7 @@ http://34.101.243.177:8080/
 - ******URL******
     - /predict
 - ************Method************
-    - PUSH
+    - POST
 - **************************Request Body**************************
     - file, as file
 - ****************Response****************
