@@ -8,4 +8,4 @@ admin.initializeApp({
   projectId: 'carupah-backend-878a3'
 });
 
-module.exports = db;
+module.exports = admin;

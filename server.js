@@ -1,5 +1,5 @@
 const express = require('express');
-const admin = require('firebase-admin');
+const admin = require('./services/firebaseAdmin');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const updateProfileRoutes = require('./routes/updateProfile');
