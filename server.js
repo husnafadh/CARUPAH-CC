@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 //authentication
-app.use('/auth', auth);
+app.use('/auth', authRoutes);
 
 //update profile
 app.use('/profile', updateProfileRoutes);
@@ -26,4 +26,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
-
