@@ -1,4 +1,5 @@
 # CARUPAH-CC
+# API Docs
 
 ## ****************Endpoint****************
 
@@ -18,7 +19,7 @@ http://34.101.39.76:8080/
     - numberPhone as number
 - **Response**
     
-    ```jsx
+    ```json
     {
         "message": "User registered successfully.",
         "data": {
@@ -43,7 +44,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```
+    ```json
     {
         "error": "Failed to registered."
     }
@@ -61,13 +62,13 @@ http://34.101.39.76:8080/
     - password as string, must be at least 8 chatacters
 - **Response**
     
-    ```jsx
+    ```json
     {
         "message": "Login successful."
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to login."
     }
@@ -82,7 +83,7 @@ http://34.101.39.76:8080/
     - GET
 - **Response**
     
-    ```jsx
+    ```json
     [
         {
             "password": "$2b$10$NJ6MPmpYg25CeS7Nc4oUQevtihGf79GKj.S41u9C8T10B53t9hCbO",
@@ -109,7 +110,7 @@ http://34.101.39.76:8080/
     ]
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to retrieve users."
     }
@@ -124,7 +125,7 @@ http://34.101.39.76:8080/
     - GET
 - **Response**
     
-    ```jsx
+    ```json
     {
         "password": "$2b$10$NJ6MPmpYg25CeS7Nc4oUQevtihGf79GKj.S41u9C8T10B53t9hCbO",
         "numberPhone": "084357567943",
@@ -137,7 +138,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to retrieve user."
     }
@@ -159,14 +160,14 @@ http://34.101.39.76:8080/
     - address as string
 - **Response**
     
-    ```jsx
+    ```json
     {
         "message": "User profile updated successfully.",
         "data": {}
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to update user"
     }
@@ -183,14 +184,14 @@ http://34.101.39.76:8080/
     - Image as file ( .png/.jpeg/.jpg)
 - **Response**
     
-    ```jsx
+    ```json
     {
         "message": "Profile image uploaded successfully.",
         "data": {}
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to upload profile image."
     }
@@ -209,7 +210,7 @@ http://34.101.39.76:8080/
     - confirm_newPassword
 - **Response**
     
-    ```jsx
+    ```json
     {
         "message": "Password changed successfully.",
         "data": {
@@ -219,7 +220,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to change password."
     }
@@ -234,14 +235,14 @@ http://34.101.39.76:8080/
     - DELETE
 - **Response**
     
-    ```jsx
+    ```json
     {
         "message": "User delete successfully.",
         "data": {}
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to delete user"
     }
@@ -264,7 +265,7 @@ http://34.101.39.76:8080/
     - evidenceFile, (upload file)
 - ****************Response****************
     
-    ```
+    ```json
     {
         "message": "User created successfully.",
         "data": {
@@ -289,7 +290,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to registered."
     }
@@ -313,7 +314,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to login."
     }
@@ -328,7 +329,7 @@ http://34.101.39.76:8080/
     - GET
 - ******************Response******************
     
-    ```
+    ```json
     [
         {
             "password": "$2b$10$RGFTGD4qZNgAhg.UJvjIz.GA42rrrZxDFU/QdV2om1zdZ64NZEb.a",
@@ -348,7 +349,7 @@ http://34.101.39.76:8080/
     ]
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to retrieve users."
     }
@@ -384,7 +385,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to retrieve user."
     }
@@ -413,7 +414,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to update user"
     }
@@ -430,14 +431,14 @@ http://34.101.39.76:8080/
     - Image as file ( .png/.jpeg/.jpg)
 - ****************Response****************
     
-    ```jsx
+    ```json
     {
         "message": "Profile image uploaded successfully.",
         "data": {}
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to upload profile image."
     }
@@ -466,7 +467,7 @@ http://34.101.39.76:8080/
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to change password."
     }
@@ -481,14 +482,14 @@ http://34.101.39.76:8080/
     - DELETE
 - ****************Response****************
     
-    ```jsx
+    ```json
     {
         "message": "User delete successfully.",
         "data": {}
     }
     ```
     
-    ```jsx
+    ```json
     {
         "error": "Failed to delete user"
     }
@@ -497,7 +498,7 @@ http://34.101.39.76:8080/
 
 ## Endpoint
 
-http://34.101.39.76:8080/
+http://34.101.82.202:8080/
 
 ### Carupai
 
@@ -506,17 +507,53 @@ http://34.101.39.76:8080/
 - **Method**
     - PUSH
 - **Request Body**
-    - message
+    - message, as string
 - **************Response**************
     
+    ```json
+    {
+        "message": "Ada yang bisa CarupAI bantu?"
+    }
+    ```
     
+    ```json
+    {
+        "detail": "Not Found"
+    }
+    ```
+    
+
+## Endpoint
+
+http://34.101.243.177:8080/
 
 ### Image Identification
 
-- **URL**
+- ******URL******
     - /predict
-- **Method**
+- ************Method************
     - PUSH
-- **Request Body**
-    - image
+- **************************Request Body**************************
+    - file, as file
 - ****************Response****************
+    
+    ```json
+    {
+      "predicted_class": "Alumunium"
+    }
+    ```
+    
+    ```json
+    {
+      "detail": [
+        {
+          "loc": [
+            "string",
+            0
+          ],
+          "msg": "string",
+          "type": "string"
+        }
+      ]
+    }
+    ```
