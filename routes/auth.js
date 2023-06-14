@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const authHandler = require('../handlers/authHandler');
+const authHandler = require('../handler/authHandler');
 
 // Registration endpoint
 router.post('/register', authHandler.register);
