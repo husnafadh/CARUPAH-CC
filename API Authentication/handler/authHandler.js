@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const db = require('../services/firebaseAdmin');
 
 // Registration handler
-function register = async (req, res) {
+const register = async (req, res) => {
   const { name, email, password, confirm_pw, numberPhone } = req.body;
   try {
     
@@ -42,34 +42,12 @@ function register = async (req, res) {
 }
 
 // Login handler
-function login = async (req, res) {
+async function login(req, res) {
+  const { email, password } = req.body;
   try {
-    const { email, password } = req.body;
-    
-    // Check if the user already exists
-    const userSnapshot = await db
-      .collection('users')
-      .where('email', '==', email)
-      .get();
-    
-    if (userSnapshot.empty) {
-      throw new Error('Login error: User not found.');
-    }
-    
-    const user = userSnapshot.docs[0].data();
-
-    if (!user.password) {
-      throw new Error('Login error: Password not set.');
-    }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-
-    if (!isPasswordValid) {
-      throw new Error('Login error: Invalid password.');
-    }
-    
+    const userRecord = await admin.auth().getUserByEmail(email);
     const token = await admin.auth().createCustomToken(userRecord.uid);
-    res.json({ message: 'Login successful', token: customToken });
+    res.json({ message: 'Login successful', token });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
