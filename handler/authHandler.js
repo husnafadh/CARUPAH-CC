@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 const bcrypt = require('bcrypt');
-const db = require('../API Authentication/services/firebaseAdmin');
+const db = require('../firebaseAdmin');
 
 // Registration handler
 const register = async (req, res) => {
