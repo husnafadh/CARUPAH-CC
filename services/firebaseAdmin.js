@@ -10,8 +10,10 @@ admin.initializeApp({
 
 //instance Firestore
 const firestore = admin.firestore();
+const db = admin.firestore();
 
 module.exports = {
   firestore,
-  admin
+  admin,
+  db
 };
