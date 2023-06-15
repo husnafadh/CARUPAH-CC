@@ -9,78 +9,65 @@ This is the Node.js backend server used by Carupah which was developed by Team C
 
 1. **Authentication**
     
+    The authentication feature is used to allow users to access features such as junk type detection, chatbots, and redirection to the trash bank. Below, we will describe the implementation steps and the technology used in this project.
     
-    - Register
+    **********************Requirement**********************
+    
+    - Express.js
         
-        ```java
-        POST ../auth/register
-        ```
+        This project uses Express.js as the backend framework to manage HTTP routes and requests.
         
-        ```java
-        {
-            "name": "husnafr",
-            "email": "husna@carupah.com",
-            "password": "husna123",
-            "confirm_pw": "husna123",
-            "numberPhone": "08112244500"
-        }
-        ```
+    - Firebase and Google Cloud Console.
         
-    - Login
+        We use Firebase as the authentication platform integrated with the Google Cloud Console. Firebase provides secure and easy-to-use authentication features.
         
-        ```java
-         POST ../auth/login
-        ```
-        
-        ```java
-        {
-            "email": "husna@carupah.com",
-            "password": "husna123",
-            "confirm_pw": "husna123"
-        }
-        ```
-        
-        ```java
-        
-        ```
-        
+    
+    **************************************Implementation Step**************************************
+    
+    - Firebase Authentication integration with Express.js
+    - Configuration of Firebase and Google Cloud Console
+    - Implementation of user Registration and Login logic
+    
 2. **Waste Type Detection**
     
     Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
     
-    ```java
-    POST ../bank-sampah/
-    ```
+    *bash*
     
     ```java
-    {
-      "image": "<base64 encoded image>"
-    }
-    ```
-    
-    ```java
-    {
-      "result": "<jenis_sampah>"
-    }
+    GET ../bank-sampah
+    GET ../bank-sampah/:userId
+    POST ../bank-sampah
+    PATCH ../bank-sampah/:userId
+    DELETE ../bank-sampah/:userId
+    PATCH ../bank-sampah/profile-picture/:userId
+    PATCH ../bank-sampah/change-password/:userId
+    POST ../bank-sampah/login
     ```
     
 3. **Chatbot**
     
     The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
     
+    *bash*
+    
     ```java
     POST ../carupai
     ```
     
-    ```java
-    {
-      "message": "<pesan_pengguna>"
-    }
-    ```
+    ***request body***
     
     ```java
     {
-      "message": "<pesan_respon_chatbot>"
+      "message": "<user_message>"
+    }
+    ```
+    
+    ********response********
+    
+    ```java
+    {
+      "message": "<chatbot_response_message>"
     }
     ```
     
@@ -88,9 +75,13 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     
     The application also provides information about the nearest waste bank based on the user's location. API endpoint to get waste bank information:
     
+    *bash*
+    
     ```java
     GET ../nearest-bank/distance?latitude=<latitude>&longitude=<longitude>
     ```
+    
+    ********response********
     
     ```java
     {
@@ -110,29 +101,23 @@ This is the Node.js backend server used by Carupah which was developed by Team C
 
 Here are the steps to setup the development environment:
 
-1. Clone the repository into a local directory
-    
-    ```java
-    git clone https://github.com/user/repo.git
-    ```
-    
+1. Create a new project
 2. Install the required dependencies
     
     ```java
-    cd repo
     npm install
     ```
     
 3. Firebase configuration
-    - Create a new project in Firebase and get the Firebase API configuration.
-    - Copy the **.env.example** file to **.env** and fill it with the Firebase configuration.
+    - Create a new project in Firebase and get the Firebase configuration.
+    - Use the required Firebase configuration.
 4. Google Cloud Console configuration
-    - Generate API key in Google Cloud Console and get API key.
-    - Copy the file **.env.example** to **.env** and fill it with the API key.
-5. Run local Server
-    
-    ```java
-    npm start
-    ```
-    
-6. Access the application via the browser
+    - Create a new project in Google Cloud Console (GCP) and get the GCP configuration.
+    - Use the required GCP configuration.
+5. Application configuration 
+    - Create files and import required modules
+    - Set up firebase using previous configuration
+    - Use Google Cloud module to connect application via API
+    - Create API endpoint
+    - Run server
+6. Run the Application
