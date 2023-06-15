@@ -13,11 +13,11 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     
     **********************Requirement**********************
     
-    - Express.js
+    - [Express.js](https://expressjs.com/)
         
         This project uses Express.js as the backend framework to manage HTTP routes and requests.
         
-    - Firebase and Google Cloud Console.
+    - [Firebase](https://firebase.google.com/docs) and [Google Cloud Console](https://cloud.google.com/docs).
         
         We use Firebase as the authentication platform integrated with the Google Cloud Console. Firebase provides secure and easy-to-use authentication features.
         
