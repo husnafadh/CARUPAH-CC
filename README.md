@@ -121,3 +121,8 @@ Here are the steps to setup the development environment:
     - Create API endpoint
     - Run server
 6. Run the Application
+
+
+## Server Architecture
+
+Server Architecture design for ********Carupah******** uses Express.js as the backend framework, Firebase as the cloud and database platform, and the Google Cloud Console as the development and deployment environment.
