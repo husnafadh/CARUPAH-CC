@@ -7,7 +7,7 @@ This is the Node.js backend server used by Carupah which was developed by Team C
 
 ## Main Feature
 
-1. **Authentication**
+### 1. **Authentication**
     
     The authentication feature is used to allow users to access features such as junk type detection, chatbots, and redirection to the trash bank. Below, we will describe the implementation steps and the technology used in this project.
     
@@ -28,7 +28,7 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     - Configuration of Firebase and Google Cloud Console
     - Implementation of user Registration and Login logic
     
-2. **Waste Type Detection**
+### 2. **Waste Type Detection**
     
     Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
     
@@ -45,7 +45,7 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     POST ../bank-sampah/login
     ```
     
-3. **Chatbot**
+### 3. **Chatbot**
     
     The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
     
@@ -71,7 +71,7 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     }
     ```
     
-4. **Waste Bank Features**
+### 4. **Waste Bank Features**
     
     The application also provides information about the nearest waste bank based on the user's location. API endpoint to get waste bank information:
     
@@ -126,3 +126,5 @@ Here are the steps to setup the development environment:
 ## Server Architecture
 
 Server Architecture design for ********Carupah******** uses Express.js as the backend framework, Firebase as the cloud and database platform, and the Google Cloud Console as the development and deployment environment.
+
+
