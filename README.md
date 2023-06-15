@@ -3,7 +3,7 @@
 ## Carupah
 
 **Carupah** is an application that allows users to detect types of waste, interact with chatbots, and get information about the nearest waste bank. This application is built using the Express.js framework for the back-end server, Firebase as a database and file storage, and Google Cloud Console to manage the API used.
-This is the Node.js backend server used by Carupah which was developed by Team C23-PS062 using express.js, firebase, and google cloud console for capstone project  related to the Bangkit Program. To see the server implementation of this repository, visit: https://
+This is the Node.js backend server used by Carupah which was developed by Team C23-PS062 using express.js, firebase, and google cloud console for capstone project  related to the Bangkit Program.
 
 ## Main Feature
 
@@ -97,7 +97,7 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     ```
     
 
-### **Development Environment Setup**
+## Development Environment Setup
 
 Here are the steps to setup the development environment:
 
