@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const articleController = require('../controller/artikel');
+const articleController = require('../handlers/articleHandler');
 
 // get all artikel
 router.get('/', articleController.getAllArticle);
