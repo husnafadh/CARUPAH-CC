@@ -32,44 +32,44 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     
     Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
     
-    *bash*
+- ******URL******
+    - /predict
+- ************Method************
+    - POST
+- **************************Request Body**************************
+    - file, as image
+- ****************Response****************
     
-    ```java
-    GET ../bank-sampah
-    GET ../bank-sampah/:userId
-    POST ../bank-sampah
-    PATCH ../bank-sampah/:userId
-    DELETE ../bank-sampah/:userId
-    PATCH ../bank-sampah/profile-picture/:userId
-    PATCH ../bank-sampah/change-password/:userId
-    POST ../bank-sampah/login
+    ```json
+    {
+      "predicted_class": "<result>"
+    }
     ```
+   
     
 ### 3. **Chatbot**
     
     The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
+
+- **URL**
+    - /carupai
+- **Method**
+    - POST
+- **Request Body**
+    - message, as string
+- **************Response**************
     
-    *bash*
-    
-    ```java
-    POST ../carupai
-    ```
-    
-    ***request body***
-    
-    ```java
+    ```json
     {
-      "message": "<user_message>"
+        "message": "<chatbot_response_message>"
     }
     ```
     
-    ********response********
-    
-    ```java
+    ```json
     {
-      "message": "<chatbot_response_message>"
+        "detail": "Not Found"
     }
-    ```
+    
     
 ### 4. **Waste Bank Features**
     
