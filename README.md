@@ -29,35 +29,32 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     - Implementation of user Registration and Login logic
     
 ### 2. **Waste Type Detection**
-    
-    Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
-    
-- ******URL******
-    - /predict
-- ************Method************
-    - POST
-- **************************Request Body**************************
+
+Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
+
+- **Method**
+    - POST …/predict
+- **Request Body**
     - file, as image
-- ****************Response****************
+- **Response**
     
     ```json
     {
       "predicted_class": "<result>"
     }
+    
     ```
    
     
 ### 3. **Chatbot**
-    
-    The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
 
-- **URL**
-    - /carupai
+The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
+
 - **Method**
-    - POST
+    - POST …/carupai
 - **Request Body**
     - message, as string
-- **************Response**************
+- **Response**
     
     ```json
     {
@@ -72,13 +69,13 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     
     *bash*
     
-    ```java
+    ```json
     GET ../nearest-bank/distance?latitude=<latitude>&longitude=<longitude>
     ```
     
     ********response********
     
-    ```java
+    ```json
     {
       "bank_sampah": [
         {
@@ -99,7 +96,7 @@ Here are the steps to setup the development environment:
 1. Create a new project
 2. Install the required dependencies
     
-    ```java
+    ```json
     npm install
     ```
     
