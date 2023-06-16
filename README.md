@@ -65,11 +65,6 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     }
     ```
     
-    ```json
-    {
-        "detail": "Not Found"
-    }
-    
     
 ### 4. **Waste Bank Features**
     
