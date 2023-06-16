@@ -7,17 +7,17 @@ This is the Node.js backend server used by Carupah which was developed by Team C
 
 ## Main Feature
 
-1. **Authentication**
+### 1. **Authentication**
     
     The authentication feature is used to allow users to access features such as junk type detection, chatbots, and redirection to the trash bank. Below, we will describe the implementation steps and the technology used in this project.
     
     **********************Requirement**********************
     
-    - Express.js
+    - [Express.js](https://expressjs.com/)
         
         This project uses Express.js as the backend framework to manage HTTP routes and requests.
         
-    - Firebase and Google Cloud Console.
+    - [Firebase](https://firebase.google.com/docs) and [Google Cloud Console](https://cloud.google.com/docs).
         
         We use Firebase as the authentication platform integrated with the Google Cloud Console. Firebase provides secure and easy-to-use authentication features.
         
@@ -28,62 +28,54 @@ This is the Node.js backend server used by Carupah which was developed by Team C
     - Configuration of Firebase and Google Cloud Console
     - Implementation of user Registration and Login logic
     
-2. **Waste Type Detection**
+### 2. **Waste Type Detection**
+
+Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
+
+- **Method**
+    - POST …/predict
+- **Request Body**
+    - file, as image
+- **Response**
     
-    Users can upload trash images, and the system will detect the type of trash based on image analysis using AI technology. This app provides the following API endpoints:
-    
-    *bash*
-    
-    ```java
-    GET ../bank-sampah
-    GET ../bank-sampah/:userId
-    POST ../bank-sampah
-    PATCH ../bank-sampah/:userId
-    DELETE ../bank-sampah/:userId
-    PATCH ../bank-sampah/profile-picture/:userId
-    PATCH ../bank-sampah/change-password/:userId
-    POST ../bank-sampah/login
-    ```
-    
-3. **Chatbot**
-    
-    The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
-    
-    *bash*
-    
-    ```java
-    POST ../carupai
-    ```
-    
-    ***request body***
-    
-    ```java
+    ```json
     {
-      "message": "<user_message>"
+      "predicted_class": "<result>"
+    }
+    
+    ```
+   
+    
+### 3. **Chatbot**
+
+The application provides a chatbot feature that allows users to interact and get information related to waste. API endpoint for chatbot:
+
+- **Method**
+    - POST …/carupai
+- **Request Body**
+    - message, as string
+- **Response**
+    
+    ```json
+    {
+        "message": "<chatbot_response_message>"
     }
     ```
     
-    ********response********
     
-    ```java
-    {
-      "message": "<chatbot_response_message>"
-    }
-    ```
-    
-4. **Waste Bank Features**
+### 4. **Waste Bank Features**
     
     The application also provides information about the nearest waste bank based on the user's location. API endpoint to get waste bank information:
     
     *bash*
     
-    ```java
+    ```json
     GET ../nearest-bank/distance?latitude=<latitude>&longitude=<longitude>
     ```
     
     ********response********
     
-    ```java
+    ```json
     {
       "bank_sampah": [
         {
@@ -104,7 +96,7 @@ Here are the steps to setup the development environment:
 1. Create a new project
 2. Install the required dependencies
     
-    ```java
+    ```json
     npm install
     ```
     
@@ -126,3 +118,5 @@ Here are the steps to setup the development environment:
 ## Server Architecture
 
 Server Architecture design for ********Carupah******** uses Express.js as the backend framework, Firebase as the cloud and database platform, and the Google Cloud Console as the development and deployment environment.
+
+
