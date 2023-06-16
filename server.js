@@ -6,6 +6,7 @@ const authRoutes = require('./routes/auth');
 const updateProfileRoutes = require('./routes/updateProfile');
 const bankSampahRoutes = require('./routes/bankSampah');
 const nearestBankRoutes = require('./routes/nearestBank');
+const articleRoutes = require('./routes/article');
 
 const app = express();
 app.use(express.json());
@@ -22,6 +23,9 @@ app.use('/bank-sampah', bankSampahRoutes);
 
 //bank terdekat
 app.use('/nearest-bank', nearestBankRoutes);
+
+//article
+app.use('/article', articleRoutes);
 
 //deployment check
 app.get('/', (req, res) => {
