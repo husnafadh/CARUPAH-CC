@@ -1,4 +1,4 @@
-const db = require('../config/firebaseAdmin');
+const db = require('../services/firebaseAdmin');
 const admin = require('firebase-admin');
 
 const getAllArticle = async (req, res) => {
