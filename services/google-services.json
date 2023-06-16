@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1077678923255",
+    "project_id": "carupah-backend-878a3",
+    "storage_bucket": "carupah-backend-878a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077678923255:android:a7b0d5797f369b2c4662f2",
+        "android_client_info": {
+          "package_name": "com.capstone.carupah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077678923255-vjvgc5q5licb5ddr5o0r9s83691704ov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstone.carupah",
+            "certificate_hash": "2b51719a26d6eb4052059fac9789b317ae7bc2b3"
+          }
+        },
+        {
+          "client_id": "1077678923255-vl4hv83eqnvb7j39n0ve6vt5m1js3v2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0EFUDpwEEnd39lXrrL9PNdlXKeN72Zig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077678923255-vjb20paf7rb61e7njcsilbjf04sa5m63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

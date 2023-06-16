@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bankSampahHandler = require('../handlers/bankSampahHandler');
+const bankSampahHandler = require('./handlers/bankSampahHandler');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
